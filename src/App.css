@@ -1,16 +1,21 @@
 
 .chat-box {
-  width: 100vw;
-  height: 100vw;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
 }
+
 .main-div{
   display: flex;
   justify-content: left;
   flex-direction: row;
   padding: 0;
-  height: 100vw;
-  width: 120vw;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 li {
@@ -19,8 +24,14 @@ li {
 }
 .side-bar {
   background-color: #161718;
-  height: 100%;
-  width: 20vw;
+  height: 100vh;
+  width: 20%;
   padding: 0;
 }
+img{
+  width: 2em;
+  height: 2em;
+  padding: 2px;
+}
+
 
