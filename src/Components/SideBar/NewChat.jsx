@@ -2,7 +2,7 @@ import {
   useChats,
   useChatsDispatch,
   useCurrentChatId,
-} from "../../Context/ConversationContext";
+} from "../Context/ConversationContext";
 import "./Styles.css";
 
 function NewChatButton() {

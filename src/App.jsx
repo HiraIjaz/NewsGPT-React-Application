@@ -1,22 +1,8 @@
 import "./App.css";
-import SideBar from "./Components/SideBar";
-import ChatBox from "./Components/ChatBox/index.jsx";
-import {
-  ChatsProvider,
-  CurrentChatProvider,
-} from "./Context/ConversationContext";
+import Layout from "./Components/Layouts/Layout";
 
 function App() {
-  return (
-    <ChatsProvider>
-      <CurrentChatProvider>
-        <div className="main-div">
-          <SideBar className="side-bar"></SideBar>
-          <ChatBox className="chat-box"></ChatBox>
-        </div>
-      </CurrentChatProvider>
-    </ChatsProvider>
-  );
+  return <Layout></Layout>;
 }
 
 export default App;

@@ -1,0 +1,37 @@
+
+.chat-box {
+  width: 100%;
+  height: 100%;
+  bottom: 0%;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+}
+
+.main-div{
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.side-bar {
+  background-color: #161718;
+  height: 100vh;
+  width: 20%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+img{
+  width: 2em;
+  height: 2em;
+  padding: 2px;
+}
+
+

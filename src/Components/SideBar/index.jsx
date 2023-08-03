@@ -1,18 +1,17 @@
 import "./Styles.css";
 import NewChatButton from "./NewChat";
-import { useEffect, useState } from "react";
-import { useChats, useCurrentChatId } from "../../Context/ConversationContext";
-function SideBar() {
+import { useChats, useCurrentChatId } from "../Context/ConversationContext.jsx";
+function SideBar(isSidebarVisible, setSidebarVisible) {
   const chats = useChats();
   const currChatId = useCurrentChatId();
-  const [sidebarVisible, setSidebarVisible] = useState(true);
+
   return (
-    <div className={`side-bar ${sidebarVisible ? "visible" : "hidden"}`}>
+    <div className={`side-bar ${isSidebarVisible ? "visible" : "hidden"}`}>
       <div>
         <NewChatButton></NewChatButton>
         <button
           className="hide-side-bar visible"
-          onClick={() => setSidebarVisible(!sidebarVisible)}
+          onClick={() => setSidebarVisible(!isSidebarVisible)}
         >
           &larr;
         </button>

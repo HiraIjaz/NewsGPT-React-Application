@@ -1,4 +1,4 @@
-import { useChats, useCurrentChatId } from "../../Context/ConversationContext";
+import { useChats, useCurrentChatId } from "../Context/ConversationContext";
 import "./Styles.css";
 function Chat() {
   const conversations = useChats();
