@@ -6,11 +6,6 @@ function SideBar() {
   const chats = useChats();
   const currChatId = useCurrentChatId();
   const [sidebarVisible, setSidebarVisible] = useState(true);
-  useEffect(() => {
-    return () => {
-      console.log("Side bar component is unmounted. Cleanup here.");
-    };
-  }, [currChatId.currentChatId]);
   return (
     <div className={`side-bar ${sidebarVisible ? "visible" : "hidden"}`}>
       <div>

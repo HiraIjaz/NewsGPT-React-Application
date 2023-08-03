@@ -1,6 +1,6 @@
 import "./App.css";
 import SideBar from "./Components/SideBar";
-import ChatBox from "./Components/ChatBox/index.jsx";
+import ChatBox from "./Components/ChatBox/box.jsx";
 import {
   ChatsProvider,
   CurrentChatProvider,
@@ -20,16 +20,3 @@ function App() {
 }
 
 export default App;
-
-/*
-  conversations= [
-    {
-      convId: 0,
-      [{'hi','hello'},{'how are you','i am fine'}]
-    },
-    {
-      convId: 2,
-      [{'halloo','hiiii'},{'how ya doin','great'},{'coffe?',''}]
-    }
-  ]
-*/

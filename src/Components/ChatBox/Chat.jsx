@@ -1,15 +1,9 @@
-import { useEffect } from "react";
 import { useChats, useCurrentChatId } from "../../Context/ConversationContext";
 import "./Styles.css";
 function Chat() {
   const conversations = useChats();
   const chatId = useCurrentChatId();
 
-  useEffect(() => {
-    return () => {
-      console.log("Chat component is unmounted. Cleanup here.");
-    };
-  }, [chatId.currentChatId]);
   function getChat(conversation) {
     return (
       <div key={conversation.convId}>
