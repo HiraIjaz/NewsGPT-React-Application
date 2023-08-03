@@ -18,7 +18,10 @@ function Layout() {
             isSidebarVisible={isSidebarVisible}
             setSidebarVisible={setSidebarVisible}
           ></SideBar>
-          <ChatBox className="chat-box"></ChatBox>
+          <ChatBox
+            className="chat-box"
+            isSidebarVisible={isSidebarVisible}
+          ></ChatBox>
         </div>
       </CurrentChatProvider>
     </ChatsProvider>

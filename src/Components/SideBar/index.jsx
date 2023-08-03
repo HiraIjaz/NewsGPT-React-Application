@@ -1,34 +1,48 @@
+/* eslint-disable react/prop-types */
 import "./Styles.css";
 import NewChatButton from "./NewChat";
 import { useChats, useCurrentChatId } from "../Context/ConversationContext.jsx";
-function SideBar(isSidebarVisible, setSidebarVisible) {
+function SideBar({ isSidebarVisible, setSidebarVisible }) {
   const chats = useChats();
   const currChatId = useCurrentChatId();
 
-  return (
-    <div className={`side-bar ${isSidebarVisible ? "visible" : "hidden"}`}>
-      <div>
-        <NewChatButton></NewChatButton>
-        <button
-          className="hide-side-bar visible"
-          onClick={() => setSidebarVisible(!isSidebarVisible)}
-        >
-          &larr;
-        </button>
+  if (isSidebarVisible) {
+    return (
+      <div className="side-bar ">
+        <div>
+          <NewChatButton></NewChatButton>
+          <button
+            className="hide-side-bar"
+            onClick={() => setSidebarVisible(!isSidebarVisible)}
+          >
+            &larr;
+          </button>
+        </div>
+        <ul className="chat-list">
+          {chats
+            .slice()
+            .reverse()
+            .map((chat) => (
+              <li
+                key={chat.convId}
+                onClick={() => currChatId.setCurrentChatId(chat.convId)}
+              >
+                {chat.messages[0].text.length !== "" && chat.messages[0].text}
+              </li>
+            ))}
+        </ul>
       </div>
-      <ul className="chat-list">
-        {chats
-          .slice()
-          .reverse()
-          .map((chat) => (
-            <li
-              key={chat.convId}
-              onClick={() => currChatId.setCurrentChatId(chat.convId)}
-            >
-              {chat.messages[0].text.length !== "" && chat.messages[0].text}
-            </li>
-          ))}
-      </ul>
+    );
+  }
+
+  return (
+    <div className="side-bar hidden">
+      <button
+        className="hide-side-bar"
+        onClick={() => setSidebarVisible(!isSidebarVisible)}
+      >
+        &larr;
+      </button>
     </div>
   );
 }

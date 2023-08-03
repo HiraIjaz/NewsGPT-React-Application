@@ -43,14 +43,14 @@
   
 }
 .query{
-  background-color:  #4a4854;
+  background-color:  #343541;
   margin:0;
   padding: 10px 25%;
   display: flex;
   align-items: center;
 }
 .response{
-  background-color:  #6f698a;
+  background-color:  #444654;
   margin:0;
   padding: 10px 25%;
   display: flex;
@@ -64,4 +64,7 @@ p{
   margin: 0;
   font-size: 16px;
   
+}
+.expanded-chatbox{
+  width: 280%;
 }

@@ -1,5 +1,6 @@
 import { useChats, useCurrentChatId } from "../Context/ConversationContext";
 import "./Styles.css";
+import AnimatedText from "./Animatedtext";
 function Chat() {
   const conversations = useChats();
   const chatId = useCurrentChatId();
@@ -16,7 +17,13 @@ function Chat() {
               </div>
               <div className="response">
                 <img src="src/assets/Logo.png" alt="Logo" />
-                <p>{message.reply}</p>
+                {index !== conversation.messages.length - 1 ? (
+                  <p>{message.reply}</p>
+                ) : (
+                  <p>
+                    <AnimatedText text={message.reply} />
+                  </p>
+                )}
               </div>
             </div>
           ))}
