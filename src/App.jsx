@@ -1,10 +1,10 @@
 import "./App.css";
 import SideBar from "./Components/SideBar";
-import ChatBox from "./Components/ChatBox";
+import ChatBox from "./Components/ChatBox/box.jsx";
 import {
   ChatsProvider,
   CurrentChatProvider,
-} from "./Components/ConversationContext";
+} from "./Context/ConversationContext";
 
 function App() {
   return (

@@ -18,15 +18,15 @@
   width: 100%;
 }
 
-li {
-  white-space: nowrap;
-  overflow: hidden;
-}
+
 .side-bar {
   background-color: #161718;
   height: 100vh;
   width: 20%;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
 }
 img{
   width: 2em;

@@ -28,19 +28,24 @@ export function CurrentChatProvider({ children }) {
 //reducer
 function chatsReducer(chats, action) {
   switch (action.type) {
-    case "addConversation": {
-      return [
+    case "addNewChat": {
+      chats = [
         ...chats,
         {
           convId: action.id,
-          messages: action.messages,
+          messages: [{ text: "New Chat", reply: "" }],
         },
       ];
+      return (chats = chats.filter((chat) => chat !== null));
     }
     case "addMessage": {
       return chats.map((c) => {
         if (c.convId == action.id) {
-          return { ...c, messages: [...c.messages, action.message] };
+          if (c.messages[0].text === "New Chat") {
+            return { ...c, messages: [action.message] };
+          } else {
+            return { ...c, messages: [...c.messages, action.message] };
+          }
         } else {
           return c;
         }
@@ -70,16 +75,16 @@ const initialConversations = [
   {
     convId: 0,
     messages: [
-      { text: "hi", reply: "hello" },
-      { text: "how are you", reply: "i am fine" },
+      { text: "Hi", reply: "Hello" },
+      { text: "How are you", reply: "I am fine" },
     ],
   },
   {
     convId: 1,
     messages: [
-      { text: "halloo", reply: "hiiii" },
-      { text: "how ya doin", reply: "great" },
-      { text: "coffe?", reply: "" },
+      { text: "Halloo", reply: "Hiiii" },
+      { text: "How ya doin", reply: "Great" },
+      { text: "Coffee?", reply: "NAH" },
     ],
   },
 ];

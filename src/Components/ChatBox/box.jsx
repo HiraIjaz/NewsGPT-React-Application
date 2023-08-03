@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./Styles.css";
 import Chat from "./Chat";
-import { useChatsDispatch, useCurrentChatId } from "./ConversationContext";
+
+import {
+  useChatsDispatch,
+  useCurrentChatId,
+} from "../../Context/ConversationContext";
 //import chatReducer from './ChatReducer';
 
 function ChatBox() {
@@ -78,4 +82,5 @@ function ChatBox() {
     </div>
   );
 }
+
 export default ChatBox;
