@@ -3,25 +3,26 @@
   height: 30px;
   padding: 20px 0;
   width: 100%;
-  background-color: rgba(48, 44, 55,0.2);
-  box-shadow: 20px 20px 50px gray;
+  background-color:#343541;
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  color: white;
   
 }
 .input{
   width: 50%;
   height: 30px;
-  border: solid 2px black;
+  border: none;
   border-radius: 10px;
   text-align: left;
   padding-left: 10px;
   background-color: #242424;
+  color: white;
 }
 .btn{
   height: 36px;
-  border: solid 2px black;
+  border: none;
   border-radius: 10px;
   text-align: center;
   margin-left: 5px ;
@@ -36,7 +37,7 @@
   height: 100vh;
 }
 .chat-container {
-  background-color:  #242424;
+  background-color:  #343541;
   overflow-y: scroll;
   height: 100%;
   width: 100%;

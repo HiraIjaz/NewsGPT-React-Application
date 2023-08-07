@@ -1,21 +1,8 @@
 import "./App.css";
-import Layout from "./Components/Layouts/Layout";
+import MainPage from "./Pages/HomePage.jsx";
 
 function App() {
-  return <Layout></Layout>;
+  return <MainPage></MainPage>;
 }
 
 export default App;
-
-/*
-  conversations= [
-    {
-      convId: 0,
-      [{'hi','hello'},{'how are you','i am fine'}]
-    },
-    {
-      convId: 2,
-      [{'halloo','hiiii'},{'how ya doin','great'},{'coffe?',''}]
-    }
-  ]
-*/

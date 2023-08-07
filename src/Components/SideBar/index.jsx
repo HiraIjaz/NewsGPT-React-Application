@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./Styles.css";
-import React from "react";
+
 import DeleteChatButton from "./DeleteChat";
 import NewChatButton from "./NewChat";
 import { useChats, useCurrentChatId } from "../Context/ConversationContext.jsx";

@@ -8,7 +8,7 @@
 }
 
 .chat-list li {
-  padding: 10px 20px; 
+  padding: 10px 10px; 
   background-color: #161718; 
   border-bottom: #fff;
   border-width: 2rem;
@@ -40,6 +40,8 @@
 .container{
   display: flex;
   flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 }
 .hide-side-bar{
   width: 50px;
@@ -70,12 +72,11 @@
 .list-item-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 10px;
+
 }
-li.current {
-  background-color: #f0f0f0;
-  border: 1px solid red;
-}
+
 
 
 
