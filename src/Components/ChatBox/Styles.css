@@ -68,3 +68,17 @@ p{
 .expanded-chatbox{
   width: 280%;
 }
+.welcome-container{
+  margin: 129px 164px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.welcome-container h1{
+  font-size: 50px;
+  color: #636679;
+  
+}

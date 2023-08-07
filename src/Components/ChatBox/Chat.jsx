@@ -8,6 +8,7 @@ function Chat() {
   function getChat(conversation) {
     return (
       <div key={conversation.convId}>
+        {console.log(conversations)}
         {conversation.messages[0].reply !== "" &&
           conversation.messages.map((message, index) => (
             <div key={index}>
@@ -30,9 +31,18 @@ function Chat() {
       </div>
     );
   }
+  function getWelcome() {
+    return (
+      <div className="welcome-container">
+        <h1 className="welcome-p">NewsGPT</h1>
+      </div>
+    );
+  }
   return (
     <div className="chat-container">
-      {getChat(conversations[chatId.currentChatId])}
+      {conversations.length > 0
+        ? getChat(conversations[chatId.currentChatId])
+        : getWelcome()}
     </div>
   );
 }

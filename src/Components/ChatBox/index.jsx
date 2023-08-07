@@ -34,8 +34,7 @@ export default function ChatBox({ isSidebarVisible }) {
             setText("");
           }}
         >
-          {" "}
-          send
+          Send
         </button>
       </div>
       <Chat></Chat>

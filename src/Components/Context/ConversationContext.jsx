@@ -19,7 +19,8 @@ export function ChatsProvider({ children }) {
 }
 
 export function CurrentChatProvider({ children }) {
-  const [currentChatId, setCurrentChatId] = useState(0);
+  const initChat = initialConversations[initialConversations.length - 1].convId;
+  const [currentChatId, setCurrentChatId] = useState(initChat);
   return (
     <CurrentChatIdContext.Provider value={{ currentChatId, setCurrentChatId }}>
       {children}
@@ -52,8 +53,9 @@ function chatsReducer(chats, action) {
         }
       });
     }
-    case "deleteConversation": {
-      return chats.filter((c) => c.convId !== action.id);
+    case "deleteChat": {
+      const newchats = chats.filter((c) => c.convId !== action.id);
+      return newchats;
     }
     default: {
       throw Error("Unknown action: " + action.type);
@@ -76,16 +78,40 @@ const initialConversations = [
   {
     convId: 0,
     messages: [
-      { text: "Hi", reply: "Hello" },
-      { text: "How are you", reply: "I am fine" },
+      {
+        text: "Scientists discover a new species of deep-sea creatures off the coast of Australia.",
+        reply:
+          "New species discoveries are common in the scientific community, especially in unexplored areas like the deep sea.",
+      },
+      {
+        text: "World's largest solar farm inaugurated in a desert region",
+        reply:
+          "With advancements in solar technology, large-scale solar farms are being established in suitable regions worldwide",
+      },
     ],
   },
   {
     convId: 1,
     messages: [
-      { text: "Halloo", reply: "Hiiii" },
-      { text: "How ya doin", reply: "Great" },
-      { text: "Coffee?", reply: "NAH" },
+      {
+        text: "New study links excessive screen time to increased anxiety levels in teenagers.",
+        reply:
+          "Numerous studies have shown the correlation between excessive screen time and mental health issues in teenagers.",
+      },
+      {
+        text: "AI-powered medical device receives FDA approval for early cancer detection",
+        reply:
+          "AI-powered medical devices have been developed and approved for various diagnostic applications, including cancer detection",
+      },
+      {
+        text: "Celebrity's social media account hacked, leading to the spread of false information",
+        reply:
+          "High-profile social media accounts have been targeted by hackers, leading to the dissemination of false information in the past",
+      },
     ],
+  },
+  {
+    convId: 2,
+    messages: [{ text: "New Chat", reply: "" }],
   },
 ];

@@ -9,7 +9,11 @@ function NewChatButton() {
   const dispatch = useChatsDispatch();
   const currChatId = useCurrentChatId();
   const chats = useChats();
-  const lastChat = chats[chats.length - 1].convId;
+  const clength = chats.length;
+  let lastChat = -1;
+  if (clength > 0) {
+    lastChat = chats[chats.length - 1].convId;
+  }
   const nextChatId = lastChat + 1;
 
   return (
